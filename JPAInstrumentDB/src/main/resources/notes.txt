@@ -1,0 +1,39 @@
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+
+
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+spring.datasource.url=jdbc:h2:mem:AZ;
+
+
+FIELDS GUITARS :
+
+
+	/*
+	 * Overlapping Fields 
+	 */
+	private String name;
+	@Enumerated(EnumType.STRING)
+	private Color color; 
+	@Enumerated(EnumType.STRING)
+	private Nation built_in;
+	
+	/*
+	 * Guitar Fields 
+	 */
+	private int price;
+	private String listedAt; 
+	private int prodAfter; 
+	private int prodBefore; 
+	
+	/*
+	 * ELGuitar Fields 
+	 */
+	@Enumerated(EnumType.STRING)
+	private GShape shape;
+	@Enumerated(EnumType.STRING)
+	private Brand brand;
+	
