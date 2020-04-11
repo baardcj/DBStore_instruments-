@@ -5,5 +5,6 @@ public enum Color {
 	BROWN,
 	WHITE,
 	THREE_TONE_SB,
+	NATURAL,
 	UNSPECIFIED
 }

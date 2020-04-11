@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
@@ -17,8 +16,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import myapp.data.enums.Brand;
 import myapp.data.enums.Color;
-import myapp.data.enums.ELShape;
+import myapp.data.enums.GenericGuitarType;
 import myapp.data.enums.Nation;
+
+
+/*
+ * The attributes in this class is NOT present in the tables of its subclasses.
+ * Some attributes overlap with attributes in the subclasses of this class.
+ * 
+ * This class defines some generic attributes of guitars. 
+ * 
+ * Non advanced queries are the intended use cases for this table.
+ * Its tables represent a subset of the data in the tables of all its subclasses.  
+ */
+
 
 @NoArgsConstructor(access=AccessLevel.PUBLIC, force=true)
 @Data
@@ -35,16 +46,17 @@ public abstract class Guitar {
 	private String gName;	
 	private int gPrice;
 	
-	@Transient
-	private int gProdAfter; 
-	@Transient
-	private int gProdBefore; 
 	
+	@Enumerated(EnumType.STRING)
+	private Brand gBrand; 
 	@Enumerated(EnumType.STRING)
 	private Color gColor; 
 	@Enumerated(EnumType.STRING)
 	private Nation gBuiltIn;
 	
-	private String gListedAt;
-		
+	@Enumerated(EnumType.STRING)
+	private GenericGuitarType gitType = GenericGuitarType.UNSPECIFIED; 
+	
 }
+
+
