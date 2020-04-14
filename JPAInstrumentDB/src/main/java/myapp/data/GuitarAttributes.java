@@ -9,11 +9,11 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import myapp.data.builders.GBuilder;
-import myapp.data.enums.Brand;
-import myapp.data.enums.Color;
-import myapp.data.enums.GBodyShape;
-import myapp.data.enums.Nation;
+import myapp.builders.GBuilder;
+import myapp.data.enums.guitar.Brand;
+import myapp.data.enums.guitar.shapes.GuitarBodyShape;
+import myapp.data.enums.product.attributes.Color;
+import myapp.data.enums.product.production.Nation;
 
 /*
  * The attributes in this class is ONLY present in the tables of it's subclasses.
@@ -33,9 +33,7 @@ public abstract class GuitarAttributes extends Guitar{
 	private String name; 
 	
 	private int price; 
-	
 	private int prodAfter; 
-
 	private int prodBefore; 
 	
 	@Enumerated(EnumType.STRING)
@@ -48,7 +46,7 @@ public abstract class GuitarAttributes extends Guitar{
 	private Nation builtIn;
 	
 	@Transient	
-	private GBodyShape bodyShape; 
+	private GuitarBodyShape bodyShape; 
 	
 	/*
 	 * Metadata
@@ -69,8 +67,9 @@ public abstract class GuitarAttributes extends Guitar{
 		this.setGName(this.name);
 		this.setGPrice(this.price);
 		this.setGBrand(this.brand);
-		this.setGColor(this.color);
 		this.setGBuiltIn(this.builtIn);
+		this.setGProdAfter(builder.getProdAfter());
+		this.setGProdBefore(builder.getProdBefore());
 	}
 
 }

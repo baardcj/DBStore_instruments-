@@ -7,15 +7,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 
+import myapp.builders.GBuilder;
 import myapp.data.Guitar;
-import myapp.data.builders.GBuilder;
-import myapp.data.enums.Brand;
-import myapp.data.enums.Color;
-import myapp.data.enums.Nation;
-import myapp.data.gitartypes.ELGuitar;
-import myapp.data.gitartypes.ACGuitar;
-import myapp.data.enums.GBodyShape;
+import myapp.data.enums.guitar.Brand;
+import myapp.data.enums.guitar.shapes.GuitarBodyShape;
+import myapp.data.enums.product.attributes.Color;
+import myapp.data.enums.product.production.Nation;
+import myapp.data.enums.product.ranks.Quality;
 import myapp.data.repo.GuitarRepository;
+import myapp.data.tables.ACGuitar;
+import myapp.data.tables.ELGuitar;
+import myapp.metadata.enums.RETAILER;
 
 
 @SpringBootApplication
@@ -55,8 +57,10 @@ public class DBInstrumentApp {
 					.color(Color.THREE_TONE_SB)
 					.builtIn(Nation.USA)
 					.listedAt("FINN")
-					.shape(GBodyShape.STRAT)
+					.shape(GuitarBodyShape.STRAT)
 					.brand(Brand.FENDER)
+					.retailer(RETAILER.PRIVATE)
+					.category(Quality.HIGH_RATED)
 					.buildELGuitar();  
 	    	
 	    	ELGuitar g2 = GBuilder.el()
@@ -67,7 +71,7 @@ public class DBInstrumentApp {
 					.color(Color.BROWN)
 					.builtIn(Nation.USA)
 					.listedAt("FINN")
-					.shape(GBodyShape.LES_PAUL)
+					.shape(GuitarBodyShape.LES_PAUL)
 					.brand(Brand.GIBSON)
 					.buildELGuitar(); 
 	    	
@@ -79,7 +83,7 @@ public class DBInstrumentApp {
 					.color(Color.BLACK)
 					.builtIn(Nation.USA)
 					.listedAt("FINN")
-					.shape(GBodyShape.STRAT)
+					.shape(GuitarBodyShape.STRAT)
 					.brand(Brand.FENDER)
 					.buildELGuitar(); 
 	
@@ -91,7 +95,7 @@ public class DBInstrumentApp {
 					.color(Color.NATURAL)
 					.builtIn(Nation.USA)
 					.listedAt("FINN")
-					.shape(GBodyShape.DREADNOTE)
+					.shape(GuitarBodyShape.DREADNOTE)
 					.brand(Brand.MARTIN)
 					.buildACGuitar(); 
 	

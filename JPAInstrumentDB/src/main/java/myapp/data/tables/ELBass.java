@@ -1,4 +1,4 @@
-package myapp.data.gitartypes;
+package myapp.data.tables;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -7,9 +7,9 @@ import javax.persistence.Enumerated;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import myapp.builders.GBuilder;
 import myapp.data.GuitarAttributes;
-import myapp.data.builders.GBuilder;
-import myapp.data.enums.el.ELGuitarBodyShape;
+import myapp.data.enums.guitar.shapes.ELGuitarBodyShape;
 
 
 @AllArgsConstructor

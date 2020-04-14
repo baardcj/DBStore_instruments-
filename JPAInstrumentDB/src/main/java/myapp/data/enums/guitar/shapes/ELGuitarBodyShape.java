@@ -1,4 +1,4 @@
-package myapp.data.enums.el;
+package myapp.data.enums.guitar.shapes;
 
 public enum ELGuitarBodyShape {
 	STRAT, 

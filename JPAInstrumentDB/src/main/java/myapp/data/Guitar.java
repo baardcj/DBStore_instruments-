@@ -14,10 +14,11 @@ import javax.persistence.Enumerated;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import myapp.data.enums.Brand;
-import myapp.data.enums.Color;
-import myapp.data.enums.GenericGuitarType;
-import myapp.data.enums.Nation;
+import myapp.data.enums.guitar.Brand;
+import myapp.data.enums.product.production.Nation;
+import myapp.data.enums.product.ranks.Quality;
+import myapp.data.enums.product.ranks.Usage;
+import myapp.metadata.enums.RETAILER;
 
 
 /*
@@ -45,17 +46,29 @@ public abstract class Guitar {
 	
 	private String gName;	
 	private int gPrice;
+	private int gProdAfter; 
+	private int gProdBefore; 
 	
+	/*
+	 * General info about products
+	 */
 	
 	@Enumerated(EnumType.STRING)
 	private Brand gBrand; 
-	@Enumerated(EnumType.STRING)
-	private Color gColor; 
+	
 	@Enumerated(EnumType.STRING)
 	private Nation gBuiltIn;
 	
 	@Enumerated(EnumType.STRING)
-	private GenericGuitarType gitType = GenericGuitarType.UNSPECIFIED; 
+	private RETAILER retailer; 
+	
+	@Enumerated(EnumType.STRING)
+	private Quality gQualityClass;
+	
+	private Usage productCondition; 
+	
+	// A value for displaying product by rank. 
+	private int productRank; 
 	
 }
 

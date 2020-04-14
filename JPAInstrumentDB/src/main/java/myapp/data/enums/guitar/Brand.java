@@ -1,4 +1,4 @@
-package myapp.data.enums;
+package myapp.data.enums.guitar;
 
 public enum Brand {
 	FENDER, 

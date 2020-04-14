@@ -1,6 +1,14 @@
-package myapp.data.enums.ac;
+package myapp.data.enums.guitar.shapes;
 
-public enum ACGuitarBodyShape {
+public enum GuitarBodyShape {
+	STRAT, 
+	TELE, 
+	MUSTANG, 
+	JAGUAR, 
+	LES_PAUL,
+	SG,
+	J_BASS,
+	P_BASS,
 	TRAVEL,
 	MINI,
 	PARLOR,
@@ -15,5 +23,5 @@ public enum ACGuitarBodyShape {
 	SLOPE_SHOLDER_DREADNOTE,
 	JUMBO,
 	SUPER_JUMBO,
-	UNSPECIFIED,
+	UNSPECIFIED
 }

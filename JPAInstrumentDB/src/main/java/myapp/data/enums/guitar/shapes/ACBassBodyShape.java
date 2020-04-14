@@ -1,4 +1,4 @@
-package myapp.data.enums.ac;
+package myapp.data.enums.guitar.shapes;
 
 public enum ACBassBodyShape {
 	DREADNOTE, 
