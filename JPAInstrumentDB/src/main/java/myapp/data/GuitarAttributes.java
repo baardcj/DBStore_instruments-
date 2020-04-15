@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 import myapp.builders.GBuilder;
 import myapp.data.enums.guitar.Brand;
 import myapp.data.enums.guitar.shapes.GuitarBodyShape;
-import myapp.data.enums.product.attributes.Color;
+import myapp.data.enums.product.apperance.Color;
 import myapp.data.enums.product.production.Nation;
 
 /*

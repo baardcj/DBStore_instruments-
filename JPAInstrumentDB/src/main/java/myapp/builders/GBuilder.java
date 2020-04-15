@@ -2,10 +2,10 @@ package myapp.builders;
 
 import myapp.data.enums.guitar.Brand;
 import myapp.data.enums.guitar.shapes.GuitarBodyShape;
-import myapp.data.enums.product.attributes.Color;
+import myapp.data.enums.product.apperance.Color;
+//import myapp.data.enums.product.condition.Usage;
 import myapp.data.enums.product.production.Nation;
-import myapp.data.enums.product.ranks.PrevalentQualityRank;
-import myapp.data.enums.product.ranks.Usage;
+import myapp.data.enums.product.quality.QualityRank;
 import myapp.data.tables.ACBass;
 import myapp.data.tables.ACGuitar;
 import myapp.data.tables.CLGuitar;
@@ -31,8 +31,8 @@ public class GBuilder {
 	
 	// attributes for class Guitar 
 	private RETAILER retailer;
-	private PrevalentQualityRank category;
-	private Usage productCondition;
+	private QualityRank category;
+	//private Usage productCondition;
 	private int productRank; 
 	
 	// attributes for GuitarAttribute class 
@@ -85,15 +85,17 @@ public class GBuilder {
 		return this; 
 	}
 
-	public GBuilder category(PrevalentQualityRank category) {
+	public GBuilder category(QualityRank category) {
 		this.category = category; 
 		return this; 
 	}
+	
+	/*
 
 	public GBuilder condition(Usage productCondition) {
 		this.productCondition = productCondition; 
 		return this; 
-	}
+	}*/
 	
 	public GBuilder rank(int productRank) {
 		this.productRank = productRank; 

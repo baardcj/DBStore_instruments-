@@ -15,9 +15,9 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import myapp.data.enums.guitar.Brand;
+//import myapp.data.enums.product.condition.Usage;
 import myapp.data.enums.product.production.Nation;
-import myapp.data.enums.product.ranks.PrevalentQualityRank;
-import myapp.data.enums.product.ranks.Usage;
+import myapp.data.enums.product.quality.QualityRank;
 import myapp.metadata.enums.RETAILER;
 
 
@@ -63,7 +63,7 @@ public abstract class Guitar {
 	private RETAILER retailer; 
 	
 	@Enumerated(EnumType.STRING)
-	private PrevalentQualityRank gQualityClass;
+	private QualityRank gQualityClass;
 	
 	//private Usage productCondition; 
 	

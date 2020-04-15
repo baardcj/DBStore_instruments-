@@ -1,4 +1,4 @@
-package myapp.data.enums.product.attributes;
+package myapp.data.enums.product.apperance;
 
 public enum Color {
 	BLACK,

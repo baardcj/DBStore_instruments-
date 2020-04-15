@@ -1,4 +1,4 @@
-package myapp.data.enums.product.ranks;
+package myapp.data.enums.product.usage;
 
 // This designates if product is new or used, and if it is used how used it is. 
 
