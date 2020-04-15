@@ -11,5 +11,6 @@ public enum Nation {
 	JAPAN,
 	VIETNAM,
 	AUSTRALIA, 
+	SWEDEN,
 	UNSPECIFIED
 }
