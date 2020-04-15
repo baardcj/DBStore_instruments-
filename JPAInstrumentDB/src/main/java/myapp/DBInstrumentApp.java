@@ -13,7 +13,7 @@ import myapp.data.enums.guitar.Brand;
 import myapp.data.enums.guitar.shapes.GuitarBodyShape;
 import myapp.data.enums.product.attributes.Color;
 import myapp.data.enums.product.production.Nation;
-import myapp.data.enums.product.ranks.Quality;
+import myapp.data.enums.product.ranks.PrevalentQualityRank;
 import myapp.data.repo.GuitarRepository;
 import myapp.data.tables.ACGuitar;
 import myapp.data.tables.ELGuitar;
@@ -60,7 +60,7 @@ public class DBInstrumentApp {
 					.shape(GuitarBodyShape.STRAT)
 					.brand(Brand.FENDER)
 					.retailer(RETAILER.PRIVATE)
-					.category(Quality.HIGH_RATED)
+					.category(PrevalentQualityRank.HIGH_RATED)
 					.buildELGuitar();  
 	    	
 	    	ELGuitar g2 = GBuilder.el()

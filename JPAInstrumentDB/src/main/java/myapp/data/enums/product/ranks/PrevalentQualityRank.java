@@ -1,6 +1,6 @@
 package myapp.data.enums.product.ranks;
 
-public enum Quality {
+public enum PrevalentQualityRank {
 	TOP_RATED,
 	HIGH_RATED,
 	MID_RATED,

@@ -4,7 +4,7 @@ import myapp.data.enums.guitar.Brand;
 import myapp.data.enums.guitar.shapes.GuitarBodyShape;
 import myapp.data.enums.product.attributes.Color;
 import myapp.data.enums.product.production.Nation;
-import myapp.data.enums.product.ranks.Quality;
+import myapp.data.enums.product.ranks.PrevalentQualityRank;
 import myapp.data.enums.product.ranks.Usage;
 import myapp.data.tables.ACBass;
 import myapp.data.tables.ACGuitar;
@@ -31,7 +31,7 @@ public class GBuilder {
 	
 	// attributes for class Guitar 
 	private RETAILER retailer;
-	private Quality category;
+	private PrevalentQualityRank category;
 	private Usage productCondition;
 	private int productRank; 
 	
@@ -85,7 +85,7 @@ public class GBuilder {
 		return this; 
 	}
 
-	public GBuilder category(Quality category) {
+	public GBuilder category(PrevalentQualityRank category) {
 		this.category = category; 
 		return this; 
 	}
