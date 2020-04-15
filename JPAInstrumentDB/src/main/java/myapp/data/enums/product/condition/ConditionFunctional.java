@@ -1,0 +1,19 @@
+package myapp.data.enums.product.condition;
+
+public enum ConditionFunctional {
+	PERFECT, 
+	DECENT,
+	MEDIOCRE,
+	DISPLEASING,
+	POOR,
+	REPAIR_OBJECT,
+	BUILD_PROJECT,
+	UNSPECIFIED
+}
+
+/*
+NO_KNOWN_DEFECTS,
+MINOR_FUNCTIONAL_DEFECT,
+MINOR_VISUAL_DAMAGE,
+FUNCTIONAL_DEFECT,
+VISUAL_DAMAGE, */ 
