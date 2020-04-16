@@ -1,4 +1,4 @@
-package myapp.data;
+package myapp.data.tables;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
@@ -14,7 +14,7 @@ import javax.persistence.Enumerated;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import myapp.data.enums.guitar.Brand;
+import myapp.data.enums.product.guitar.brand.GuitarBrand;
 //import myapp.data.enums.product.condition.Usage;
 import myapp.data.enums.product.production.Nation;
 import myapp.data.enums.product.quality.QualityRank;
@@ -38,7 +38,12 @@ import myapp.metadata.enums.RETAILER;
 @Inheritance(strategy=InheritanceType.JOINED)
 @DiscriminatorColumn(name="GUITAR_TYPE")
 @Table(name="GUITARS")
-public abstract class Guitar {
+public abstract class StringedInstrument {
+	
+	/*
+	 *  This class should model more product-info
+	 *  that is not particular for guitars 
+	 */
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -46,18 +51,13 @@ public abstract class Guitar {
 	
 	private String gName;	
 	private int gPrice;
-	private int gProdAfter; 
-	private int gProdBefore; 
 	
 	/*
 	 * General info about products
 	 */
 	
 	@Enumerated(EnumType.STRING)
-	private Brand gBrand; 
-	
-	@Enumerated(EnumType.STRING)
-	private Nation gBuiltIn;
+	private GuitarBrand gBrand; 
 	
 	@Enumerated(EnumType.STRING)
 	private RETAILER retailer; 
@@ -65,9 +65,6 @@ public abstract class Guitar {
 	@Enumerated(EnumType.STRING)
 	private QualityRank gQualityClass;
 	
-	//private Usage productCondition; 
-	
-	// A value for displaying product by rank. 
 	private int productRank; 
 	
 }

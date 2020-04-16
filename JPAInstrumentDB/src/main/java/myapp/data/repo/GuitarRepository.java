@@ -1,12 +1,13 @@
 package myapp.data.repo;
 
 import org.springframework.data.repository.CrudRepository;
-import myapp.data.Guitar;
+
+import myapp.data.tables.StringedInstrument;
 
 
-public interface GuitarRepository<T extends Guitar> extends CrudRepository<T, Long> {
+public interface GuitarRepository<T extends StringedInstrument> extends CrudRepository<T, Long> {
 	
-	Guitar findById(long id);
+	StringedInstrument findById(long id);
 	
 	Iterable<T> findAll(); 
 }

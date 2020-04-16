@@ -1,8 +1,13 @@
-package myapp.data;
+package myapp.data.tables;
 
+import javax.persistence.CascadeType;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
 import lombok.AccessLevel;
@@ -10,10 +15,11 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import myapp.builders.GBuilder;
-import myapp.data.enums.guitar.Brand;
-import myapp.data.enums.guitar.shapes.GuitarBodyShape;
 import myapp.data.enums.product.apperance.Color;
+import myapp.data.enums.product.guitar.brand.GuitarBrand;
+import myapp.data.enums.product.guitar.shapes.GuitarBodyShape;
 import myapp.data.enums.product.production.Nation;
+import myapp.data.tables.timeplace.NationaAndYearStamp;
 
 /*
  * The attributes in this class is ONLY present in the tables of it's subclasses.
@@ -28,22 +34,22 @@ import myapp.data.enums.product.production.Nation;
 @Data
 @EqualsAndHashCode(callSuper=false)
 @MappedSuperclass
-public abstract class GuitarAttributes extends Guitar{
+public abstract class Guitar extends StringedInstrument{
 	
 	private String name; 
 	
 	private int price; 
-	private int prodAfter; 
-	private int prodBefore; 
 	
 	@Enumerated(EnumType.STRING)
-	private Brand brand; 
+	private GuitarBrand brand; 
 	
 	@Enumerated(EnumType.STRING)
 	private Color color; 
 
-	@Enumerated(EnumType.STRING)
-	private Nation builtIn;
+	
+	@OneToOne(cascade = {CascadeType.PERSIST})
+	@JoinColumn(name = "productionDetails_id")
+	private NationaAndYearStamp prodDetails;
 	
 	@Transient	
 	private GuitarBodyShape bodyShape; 
@@ -57,19 +63,14 @@ public abstract class GuitarAttributes extends Guitar{
 	public void setAttributes(GBuilder builder) {
 		this.name = builder.getName();
 		this.price = builder.getPrice();
-		this.prodAfter = builder.getProdAfter();
-		this.prodBefore = builder.getProdBefore();
 		this.brand = builder.getBrand();
 		this.color = builder.getColor();
-		this.builtIn = builder.getBuiltIn();
 		this.bodyShape = builder.getBodyShape();
+		this.prodDetails = builder.getProdNationAndYear();
 		
 		this.setGName(this.name);
 		this.setGPrice(this.price);
 		this.setGBrand(this.brand);
-		this.setGBuiltIn(this.builtIn);
-		this.setGProdAfter(builder.getProdAfter());
-		this.setGProdBefore(builder.getProdBefore());
 	}
 
 }

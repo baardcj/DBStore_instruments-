@@ -1,4 +1,4 @@
-package myapp.data.tables;
+package myapp.data.tables.guitartype;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -8,23 +8,24 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import myapp.builders.GBuilder;
-import myapp.data.GuitarAttributes;
-import myapp.data.enums.guitar.shapes.ACGuitarBodyShape;
+import myapp.data.enums.product.guitar.shapes.ELGuitarBodyShape;
+import myapp.data.tables.Guitar;
 
 
 @AllArgsConstructor
 @NoArgsConstructor(access=AccessLevel.PUBLIC, force=true) 
-@Entity(name="ACGuitar")
-public class ACGuitar extends GuitarAttributes{
+@Entity(name="ELGuitar")
+public class ELGuitar extends Guitar{
 	
 
 	@Enumerated(EnumType.STRING)
-	private ACGuitarBodyShape acShape;	
+	private ELGuitarBodyShape elShape;	
 	
 	
-	public ACGuitar(GBuilder builder) {
+	public ELGuitar(GBuilder builder) {
 		super();
 		this.setAttributes(builder);
-		this.acShape = ACGuitarBodyShape.valueOf(builder.getBodyShape().toString());
+		this.elShape = ELGuitarBodyShape.valueOf(builder.getBodyShape().toString());
 	}
 }
+

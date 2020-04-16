@@ -1,6 +1,6 @@
-package myapp.data.enums.guitar;
+package myapp.data.enums.product.guitar.brand;
 
-public enum Brand {
+public enum GuitarBrand {
 	FENDER, 
 	GIBSON, 
 	IBANEZ, 

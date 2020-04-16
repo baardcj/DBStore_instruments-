@@ -1,18 +1,21 @@
 package myapp.builders;
 
-import myapp.data.enums.guitar.Brand;
-import myapp.data.enums.guitar.shapes.GuitarBodyShape;
 import myapp.data.enums.product.apperance.Color;
+import myapp.data.enums.product.guitar.brand.GuitarBrand;
+import myapp.data.enums.product.guitar.shapes.GuitarBodyShape;
 //import myapp.data.enums.product.condition.Usage;
 import myapp.data.enums.product.production.Nation;
 import myapp.data.enums.product.quality.QualityRank;
-import myapp.data.tables.ACBass;
-import myapp.data.tables.ACGuitar;
-import myapp.data.tables.CLGuitar;
-import myapp.data.tables.ELBass;
-import myapp.data.tables.ELGuitar;
+import myapp.data.tables.guitartype.ACBass;
+import myapp.data.tables.guitartype.ACGuitar;
+import myapp.data.tables.guitartype.CLGuitar;
+import myapp.data.tables.guitartype.ELBass;
+import myapp.data.tables.guitartype.ELGuitar;
+import myapp.data.tables.timeplace.NationaAndYearStamp;
 import myapp.metadata.enums.RETAILER;
 import lombok.Data;
+
+import java.time.Year;
 
 import org.springframework.stereotype.Component;
 
@@ -22,23 +25,22 @@ public class GBuilder {
 		
 	private String name; 
 	private int price;
-	private int prodAfter; 
-	private int prodBefore; 
-
-	private Brand brand;
+	private GuitarBrand brand;
 	private Color color; 
-	private Nation builtIn;
 	
-	// attributes for class Guitar 
+	
 	private RETAILER retailer;
 	private QualityRank category;
-	//private Usage productCondition;
 	private int productRank; 
 	
-	// attributes for GuitarAttribute class 
 	
 	private GuitarBodyShape bodyShape; 
-	private String listedAt; // -> metadata 
+	private String listedAt; 
+	
+	private NationaAndYearStamp prodNationAndYear;
+	private Nation builtIn;
+	private int prodAfter; 
+	private int prodBefore; 
 
 	
 	public static GBuilder el() {
@@ -54,18 +56,9 @@ public class GBuilder {
 		this.price = price; 
 		return this; 
 	}
+
 	
-	public GBuilder prodAfter(int prodAfter) {
-		this.prodAfter = prodAfter; 
-		return this; 
-	}
-	
-	public GBuilder prodBefore(int prodBefore) {
-		this.prodBefore = prodBefore; 
-		return this; 
-	}
-	
-	public GBuilder brand(Brand brand) {
+	public GBuilder brand(GuitarBrand brand) {
 		this.brand = brand; 
 		return this; 
 	}
@@ -75,10 +68,6 @@ public class GBuilder {
 		return this; 
 	}
 	
-	public GBuilder builtIn(Nation nation) {
-		this.builtIn = nation; 
-		return this; 
-	}
 	
 	public GBuilder retailer(RETAILER retailer) {
 		this.retailer = retailer; 
@@ -109,6 +98,11 @@ public class GBuilder {
 	
 	public GBuilder listedAt(String listedAt) {
 		this.listedAt = listedAt; 
+		return this; 
+	}
+	
+	public GBuilder nationAndProdYear(Nation nat, int aft, int bef) {
+		this.prodNationAndYear = new NationaAndYearStamp(nat,  aft, bef);
 		return this; 
 	}
 

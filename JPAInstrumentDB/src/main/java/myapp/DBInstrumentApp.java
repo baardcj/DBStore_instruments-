@@ -8,15 +8,15 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 
 import myapp.builders.GBuilder;
-import myapp.data.Guitar;
-import myapp.data.enums.guitar.Brand;
-import myapp.data.enums.guitar.shapes.GuitarBodyShape;
 import myapp.data.enums.product.apperance.Color;
+import myapp.data.enums.product.guitar.brand.GuitarBrand;
+import myapp.data.enums.product.guitar.shapes.GuitarBodyShape;
 import myapp.data.enums.product.production.Nation;
 import myapp.data.enums.product.quality.QualityRank;
 import myapp.data.repo.GuitarRepository;
-import myapp.data.tables.ACGuitar;
-import myapp.data.tables.ELGuitar;
+import myapp.data.tables.StringedInstrument;
+import myapp.data.tables.guitartype.ACGuitar;
+import myapp.data.tables.guitartype.ELGuitar;
 import myapp.metadata.enums.RETAILER;
 
 
@@ -28,7 +28,7 @@ public class DBInstrumentApp {
 	}
 	
 	@Bean
-	public CommandLineRunner test(GuitarRepository<Guitar> grepo) {
+	public CommandLineRunner test(GuitarRepository<StringedInstrument> grepo) {
 	    return (args) -> {
 	    	
 	    	/*
@@ -52,13 +52,11 @@ public class DBInstrumentApp {
 	    	ELGuitar g1 = GBuilder.el()
 					.name("Fender std")
 					.price(6500)
-					.prodAfter(1989)
-					.prodBefore(1991)
+					.nationAndProdYear(Nation.USA, 1989, 1991)
 					.color(Color.THREE_TONE_SB)
-					.builtIn(Nation.USA)
 					.listedAt("FINN")
 					.shape(GuitarBodyShape.STRAT)
-					.brand(Brand.FENDER)
+					.brand(GuitarBrand.FENDER)
 					.retailer(RETAILER.PRIVATE)
 					.category(QualityRank.HIGH_RATED)
 					.buildELGuitar();  
@@ -66,37 +64,28 @@ public class DBInstrumentApp {
 	    	ELGuitar g2 = GBuilder.el()
 					.name("Gibson SG 76")
 					.price(11500)
-					.prodAfter(1998)
-					.prodBefore(1998)
 					.color(Color.BROWN)
-					.builtIn(Nation.USA)
 					.listedAt("FINN")
 					.shape(GuitarBodyShape.LES_PAUL)
-					.brand(Brand.GIBSON)
+					.brand(GuitarBrand.GIBSON)
 					.buildELGuitar(); 
 	    	
 	    	ELGuitar g3 = GBuilder.el()
 					.name("Fender HighWay")
 					.price(5000)
-					.prodAfter(2003)
-					.prodBefore(2007)
 					.color(Color.BLACK)
-					.builtIn(Nation.USA)
 					.listedAt("FINN")
 					.shape(GuitarBodyShape.STRAT)
-					.brand(Brand.FENDER)
+					.brand(GuitarBrand.FENDER)
 					.buildELGuitar(); 
 	
 	    	ACGuitar g4 = GBuilder.el()
 					.name("Martin D16")
 					.price(8000)
-					.prodAfter(2005)
-					.prodBefore(2005)
 					.color(Color.NATURAL)
-					.builtIn(Nation.USA)
 					.listedAt("FINN")
 					.shape(GuitarBodyShape.DREADNOTE)
-					.brand(Brand.MARTIN)
+					.brand(GuitarBrand.MARTIN)
 					.buildACGuitar(); 
 	
 	    
