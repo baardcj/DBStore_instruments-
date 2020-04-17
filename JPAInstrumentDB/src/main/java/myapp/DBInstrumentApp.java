@@ -49,6 +49,7 @@ public class DBInstrumentApp {
 			 *  
 	    	 */
 	    	
+	    	/*
 	    	ELGuitar g1 = GBuilder.el()
 					.name("Fender std")
 					.price(6500)
@@ -60,6 +61,8 @@ public class DBInstrumentApp {
 					.retailer(RETAILER.PRIVATE)
 					.category(QualityRank.HIGH_RATED)
 					.buildELGuitar();  
+	    	
+	    	*/
 	    	
 	    	ELGuitar g2 = GBuilder.el()
 					.name("Gibson SG 76")
@@ -89,7 +92,7 @@ public class DBInstrumentApp {
 					.buildACGuitar(); 
 	
 	    
-	    	grepo.save(g1);
+	    	//grepo.save(g1);
 	    	grepo.save(g2);
 	    	grepo.save(g3);
 	    	grepo.save(g4);
