@@ -11,7 +11,7 @@ import myapp.data.tables.guitartype.ACGuitar;
 import myapp.data.tables.guitartype.CLGuitar;
 import myapp.data.tables.guitartype.ELBass;
 import myapp.data.tables.guitartype.ELGuitar;
-import myapp.data.tables.timeplace.NationaAndYearStamp;
+import myapp.data.tables.timeplace.NationAndYearStamp;
 import myapp.metadata.enums.RETAILER;
 import lombok.Data;
 
@@ -37,7 +37,7 @@ public class GBuilder {
 	private GuitarBodyShape bodyShape; 
 	private String listedAt; 
 	
-	private NationaAndYearStamp prodNationAndYear;
+	private NationAndYearStamp prodNationAndYear;
 	private Nation builtIn;
 	private int prodAfter; 
 	private int prodBefore; 
@@ -102,7 +102,7 @@ public class GBuilder {
 	}
 	
 	public GBuilder nationAndProdYear(Nation nat, int aft, int bef) {
-		this.prodNationAndYear = new NationaAndYearStamp(nat,  aft, bef);
+		this.prodNationAndYear = new NationAndYearStamp(nat,  aft, bef);
 		return this; 
 	}
 
