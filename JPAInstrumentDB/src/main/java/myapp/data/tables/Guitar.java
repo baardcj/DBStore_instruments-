@@ -3,7 +3,6 @@ package myapp.data.tables;
 import javax.persistence.CascadeType;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
@@ -18,8 +17,7 @@ import myapp.builders.GBuilder;
 import myapp.data.enums.product.apperance.Color;
 import myapp.data.enums.product.guitar.brand.GuitarBrand;
 import myapp.data.enums.product.guitar.shapes.GuitarBodyShape;
-import myapp.data.enums.product.production.Nation;
-import myapp.data.tables.timeplace.NationaAndYearStamp;
+import myapp.data.tables.timeplace.NationAndYearStamp;
 
 /*
  * The attributes in this class is ONLY present in the tables of it's subclasses.
@@ -47,9 +45,10 @@ public abstract class Guitar extends StringedInstrument{
 	private Color color; 
 
 	
-	@OneToOne(cascade = {CascadeType.PERSIST})
+	//@ManyToOne(cascade = {CascadeType.PERSIST})
+	@ManyToOne
 	@JoinColumn(name = "productionDetails_id")
-	private NationaAndYearStamp prodDetails;
+	private NationAndYearStamp prodDetails;
 	
 	@Transient	
 	private GuitarBodyShape bodyShape; 
