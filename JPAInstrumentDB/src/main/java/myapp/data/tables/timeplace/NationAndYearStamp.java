@@ -11,9 +11,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import myapp.data.enums.product.production.Nation;
 
+
+@NoArgsConstructor(access=AccessLevel.PUBLIC, force=true)
 @Data
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = {
@@ -21,7 +25,7 @@ import myapp.data.enums.product.production.Nation;
 			"producedInOrAfterYear", 
 			"producedInOrBeforeYear"}))
 
-public class NationaAndYearStamp {
+public class NationAndYearStamp {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -35,7 +39,7 @@ public class NationaAndYearStamp {
 	private int producedInOrBeforeYear; 
 	
 	
-	public NationaAndYearStamp(Nation nat, int aft, int bef) {
+	public NationAndYearStamp(Nation nat, int aft, int bef) {
 		this.builtInNation = nat; 
 		this.producedInOrAfterYear = aft;
 		this.producedInOrBeforeYear = bef;
