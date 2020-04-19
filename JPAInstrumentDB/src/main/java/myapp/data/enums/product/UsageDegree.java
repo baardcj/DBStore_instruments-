@@ -1,4 +1,4 @@
-package myapp.data.enums.product.usage;
+package myapp.data.enums.product;
 
 public enum UsageDegree {
 	NEW, 				// not owned privately

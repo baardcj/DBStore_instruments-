@@ -1,4 +1,4 @@
-package myapp.data.enums.product.quality;
+package myapp.data.enums.product;
 
 public enum QualityRank {
 	TOP_RATED,

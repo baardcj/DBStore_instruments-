@@ -1,4 +1,4 @@
-package myapp.data.enums.product.condition;
+package myapp.data.enums.product;
 
 public enum ConditionFunctional {
 	PERFECT, 

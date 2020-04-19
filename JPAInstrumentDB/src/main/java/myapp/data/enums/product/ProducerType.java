@@ -1,4 +1,4 @@
-package myapp.data.enums.product.productioninfo;
+package myapp.data.enums.product;
 
 public enum ProducerType {
 	big_scale_manufacturer, 

@@ -1,17 +1,17 @@
-package myapp.builders;
+package myapp;
 
-import myapp.data.enums.metadata.RETAILER;
-import myapp.data.enums.product.apperance.Color;
+import myapp.data.enums.product.Color;
+import myapp.data.enums.product.Nation;
+import myapp.data.enums.product.QualityRank;
+import myapp.data.enums.product.RetailerType;
 import myapp.data.enums.product.guitar.GuitarBrand;
 import myapp.data.enums.product.guitar.shapes.GuitarBodyShape;
-import myapp.data.enums.product.productioninfo.Nation;
-import myapp.data.enums.product.quality.QualityRank;
 import myapp.data.tables.guitarModels.ACBass;
 import myapp.data.tables.guitarModels.ACGuitar;
 import myapp.data.tables.guitarModels.CLGuitar;
 import myapp.data.tables.guitarModels.ELBass;
 import myapp.data.tables.guitarModels.ELGuitar;
-import myapp.data.tables.timeplace.NationAndYearStamp;
+import myapp.data.tables.instrumentdetails.NationAndYearStamp;
 import lombok.Data;
 
 import java.time.Year;
@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 
 @Data
 @Component
-public class GBuilder {
+public class GuitarBuilder {
 		
 	private String name; 
 	private int price;
@@ -28,7 +28,7 @@ public class GBuilder {
 	private Color color; 
 	
 	
-	private RETAILER retailer;
+	private RetailerType retailer;
 	private QualityRank category;
 	private int productRank; 
 	
@@ -42,38 +42,38 @@ public class GBuilder {
 	private int prodBefore; 
 
 	
-	public static GBuilder el() {
-		return new GBuilder(); 
+	public static GuitarBuilder el() {
+		return new GuitarBuilder(); 
 	}
 	
-	public GBuilder name(String name) {
+	public GuitarBuilder name(String name) {
 		this.name = name; 
 		return this; 
 	}
 	
-	public GBuilder price(int price) {
+	public GuitarBuilder price(int price) {
 		this.price = price; 
 		return this; 
 	}
 
 	
-	public GBuilder brand(GuitarBrand brand) {
+	public GuitarBuilder brand(GuitarBrand brand) {
 		this.brand = brand; 
 		return this; 
 	}
 	
-	public GBuilder color(Color color) {
+	public GuitarBuilder color(Color color) {
 		this.color = color; 
 		return this; 
 	}
 	
 	
-	public GBuilder retailer(RETAILER retailer) {
+	public GuitarBuilder retailer(RetailerType retailer) {
 		this.retailer = retailer; 
 		return this; 
 	}
 
-	public GBuilder category(QualityRank category) {
+	public GuitarBuilder category(QualityRank category) {
 		this.category = category; 
 		return this; 
 	}
@@ -85,31 +85,31 @@ public class GBuilder {
 		return this; 
 	}*/
 	
-	public GBuilder rank(int productRank) {
+	public GuitarBuilder rank(int productRank) {
 		this.productRank = productRank; 
 		return this; 
 	}
 
-	public GBuilder shape(GuitarBodyShape bodyShape) {
+	public GuitarBuilder shape(GuitarBodyShape bodyShape) {
 		this.bodyShape = bodyShape; 
 		return this; 
 	}
 	
-	public GBuilder listedAt(String listedAt) {
+	public GuitarBuilder listedAt(String listedAt) {
 		this.listedAt = listedAt; 
 		return this; 
 	}
 	
-	public GBuilder nationAndProdYear(Nation nat, int aft, int bef) {
+	public GuitarBuilder nationAndProdYear(Nation nat, int aft, int bef) {
 		this.prodNationAndYear = new NationAndYearStamp(nat,  aft, bef);
 		return this; 
 	}
 
-
+	
 	public ELGuitar buildELGuitar() {
 		return new ELGuitar(this);
 	}
-	
+	/*
 	public ACGuitar buildACGuitar() {
 		return new ACGuitar(this); 
 	}
@@ -125,5 +125,6 @@ public class GBuilder {
 	public ACBass buildACBass() {
 		return new ACBass(this);
 	}
+	*/
 
 }

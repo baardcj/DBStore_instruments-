@@ -1,6 +1,6 @@
-package myapp.data.enums.metadata;
+package myapp.data.enums.product;
 
-public enum RETAILER {
+public enum RetailerType {
 	PRIVATE, 
 	PROFESIONAL_RETAILER,
 	PRIVATE_RETAILER,

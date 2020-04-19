@@ -7,7 +7,6 @@ import javax.persistence.Enumerated;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import myapp.builders.GBuilder;
 import myapp.data.enums.product.guitar.shapes.ACGuitarBodyShape;
 import myapp.data.tables.Guitar;
 
@@ -21,12 +20,9 @@ public class ACGuitar extends Guitar{
 	@Enumerated(EnumType.STRING)
 	private ACGuitarBodyShape acShape;	
 	
+	/*
+	@SuppressWarnings("unused")
 	private boolean cutAway; 
-	
-	
-	public ACGuitar(GBuilder builder) {
-		super();
-		//this.setAttributes(builder);
-		this.acShape = ACGuitarBodyShape.valueOf(builder.getBodyShape().toString());
-	}
+	*/
+
 }

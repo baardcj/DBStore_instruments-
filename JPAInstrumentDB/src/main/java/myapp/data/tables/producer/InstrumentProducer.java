@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import myapp.data.enums.product.productioninfo.ProducerType;
+import myapp.data.enums.product.ProducerType;
 
 
 @NoArgsConstructor(access=AccessLevel.PUBLIC, force=true)
@@ -38,7 +38,7 @@ public class InstrumentProducer {
 	
 	private boolean operative = true; 
 	
-	@OneToMany(mappedBy="gitarProducer")
+	@OneToMany(mappedBy="instrumentProducer")
 	private List<ProductionLocation> productionLocation;
 	
 }

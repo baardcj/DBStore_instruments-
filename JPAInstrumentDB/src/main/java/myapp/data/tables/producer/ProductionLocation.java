@@ -15,7 +15,7 @@ import javax.persistence.UniqueConstraint;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import myapp.data.enums.product.productioninfo.Nation; 
+import myapp.data.enums.product.Nation; 
 
 
 @NoArgsConstructor(access=AccessLevel.PUBLIC, force=true)

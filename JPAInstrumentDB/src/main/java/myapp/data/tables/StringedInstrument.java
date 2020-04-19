@@ -15,7 +15,9 @@ import javax.persistence.Enumerated;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import myapp.data.enums.product.quality.QualityRank;
+import myapp.data.enums.product.QualityRank;
+
+
 
 
 @NoArgsConstructor(access=AccessLevel.PUBLIC, force=true)
@@ -31,7 +33,7 @@ public abstract class StringedInstrument {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id; 
 	
-	@Column(nullable = false)
+	//@Column(nullable = false)
 	private String gName;
 	
 	private int gPrice; 

@@ -1,4 +1,4 @@
-package myapp.data.enums.product.apperance;
+package myapp.data.enums.product;
 
 public enum Style {
 	MODERN,
