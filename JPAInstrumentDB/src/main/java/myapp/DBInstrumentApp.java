@@ -8,16 +8,16 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 
 import myapp.builders.GBuilder;
+import myapp.data.enums.metadata.RETAILER;
 import myapp.data.enums.product.apperance.Color;
-import myapp.data.enums.product.guitar.brand.GuitarBrand;
+import myapp.data.enums.product.guitar.GuitarBrand;
 import myapp.data.enums.product.guitar.shapes.GuitarBodyShape;
-import myapp.data.enums.product.production.Nation;
+import myapp.data.enums.product.productioninfo.Nation;
 import myapp.data.enums.product.quality.QualityRank;
 import myapp.data.repo.GuitarRepository;
 import myapp.data.tables.StringedInstrument;
-import myapp.data.tables.guitartype.ACGuitar;
-import myapp.data.tables.guitartype.ELGuitar;
-import myapp.metadata.enums.RETAILER;
+import myapp.data.tables.guitarModels.ACGuitarModel;
+import myapp.data.tables.guitarModels.ELGuitarModel;
 
 
 @SpringBootApplication
@@ -64,7 +64,7 @@ public class DBInstrumentApp {
 	    	
 	    	*/
 	    	
-	    	ELGuitar g2 = GBuilder.el()
+	    	ELGuitarModel g2 = GBuilder.el()
 					.name("Gibson SG 76")
 					.price(11500)
 					.color(Color.BROWN)
@@ -73,7 +73,7 @@ public class DBInstrumentApp {
 					.brand(GuitarBrand.GIBSON)
 					.buildELGuitar(); 
 	    	
-	    	ELGuitar g3 = GBuilder.el()
+	    	ELGuitarModel g3 = GBuilder.el()
 					.name("Fender HighWay")
 					.price(5000)
 					.color(Color.BLACK)
@@ -82,7 +82,7 @@ public class DBInstrumentApp {
 					.brand(GuitarBrand.FENDER)
 					.buildELGuitar(); 
 	
-	    	ACGuitar g4 = GBuilder.el()
+	    	ACGuitarModel g4 = GBuilder.el()
 					.name("Martin D16")
 					.price(8000)
 					.color(Color.NATURAL)

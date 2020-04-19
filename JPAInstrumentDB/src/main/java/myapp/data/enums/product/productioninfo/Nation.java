@@ -1,4 +1,4 @@
-package myapp.data.enums.product.production;
+package myapp.data.enums.product.productioninfo;
 
 public enum Nation {
 	USA, 

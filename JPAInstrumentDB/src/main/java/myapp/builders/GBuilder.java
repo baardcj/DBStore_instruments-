@@ -1,18 +1,17 @@
 package myapp.builders;
 
+import myapp.data.enums.metadata.RETAILER;
 import myapp.data.enums.product.apperance.Color;
-import myapp.data.enums.product.guitar.brand.GuitarBrand;
+import myapp.data.enums.product.guitar.GuitarBrand;
 import myapp.data.enums.product.guitar.shapes.GuitarBodyShape;
-//import myapp.data.enums.product.condition.Usage;
-import myapp.data.enums.product.production.Nation;
+import myapp.data.enums.product.productioninfo.Nation;
 import myapp.data.enums.product.quality.QualityRank;
-import myapp.data.tables.guitartype.ACBass;
-import myapp.data.tables.guitartype.ACGuitar;
-import myapp.data.tables.guitartype.CLGuitar;
-import myapp.data.tables.guitartype.ELBass;
-import myapp.data.tables.guitartype.ELGuitar;
+import myapp.data.tables.guitarModels.ACBassModel;
+import myapp.data.tables.guitarModels.ACGuitarModel;
+import myapp.data.tables.guitarModels.CLGuitarModel;
+import myapp.data.tables.guitarModels.ELBassModel;
+import myapp.data.tables.guitarModels.ELGuitarModel;
 import myapp.data.tables.timeplace.NationAndYearStamp;
-import myapp.metadata.enums.RETAILER;
 import lombok.Data;
 
 import java.time.Year;
@@ -107,24 +106,24 @@ public class GBuilder {
 	}
 
 
-	public ELGuitar buildELGuitar() {
-		return new ELGuitar(this);
+	public ELGuitarModel buildELGuitar() {
+		return new ELGuitarModel(this);
 	}
 	
-	public ACGuitar buildACGuitar() {
-		return new ACGuitar(this); 
+	public ACGuitarModel buildACGuitar() {
+		return new ACGuitarModel(this); 
 	}
 	
-	public CLGuitar buildCLGuitar() {
-		return new CLGuitar(this);
+	public CLGuitarModel buildCLGuitar() {
+		return new CLGuitarModel(this);
 	}
 	
-	public ELBass buildELBass() {
-		return new ELBass(this); 
+	public ELBassModel buildELBass() {
+		return new ELBassModel(this); 
 	}
 	
-	public ACBass buildACBass() {
-		return new ACBass(this);
+	public ACBassModel buildACBass() {
+		return new ACBassModel(this);
 	}
 
 }

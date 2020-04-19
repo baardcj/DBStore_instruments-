@@ -1,4 +1,4 @@
-package myapp.data.tables;
+package myapp.data.tables.producer;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -15,15 +15,13 @@ import javax.persistence.UniqueConstraint;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import myapp.data.enums.product.production.Nation;
-import myapp.data.tables.GuitarProducer; 
+import myapp.data.enums.product.productioninfo.Nation; 
 
 
 @NoArgsConstructor(access=AccessLevel.PUBLIC, force=true)
 @Data
 @Entity
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"GUITAR_PRODUCER", "nation"}))
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"INSTRUMENT_PRODUCER", "nation"}))
 public class ProductionLocation {
 
 	@Id
@@ -34,7 +32,7 @@ public class ProductionLocation {
 	private Nation nation; 
 
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="GUITAR_PRODUCER")
-	private GuitarProducer gitarProducer; 
+	@JoinColumn(name="INSTRUMENT_PRODUCER")
+	private InstrumentProducer instrumentProducer; 
 	
 }

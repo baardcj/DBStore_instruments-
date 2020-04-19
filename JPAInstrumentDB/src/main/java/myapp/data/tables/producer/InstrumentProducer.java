@@ -1,4 +1,4 @@
-package myapp.data.tables;
+package myapp.data.tables.producer;
 
 import java.util.List;
 import javax.persistence.Column;
@@ -13,18 +13,17 @@ import javax.persistence.OneToMany;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import myapp.data.enums.product.production.ProducerType;
+import myapp.data.enums.product.productioninfo.ProducerType;
 
 
 @NoArgsConstructor(access=AccessLevel.PUBLIC, force=true)
 @Data
 @Entity
-public class GuitarProducer {
+public class InstrumentProducer {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="GIT_PROD_ID")
+	@Column(name="INSTRUMENT_PROD_ID")
 	private Long id; 
 	
 	@Column(unique = true)
@@ -38,7 +37,6 @@ public class GuitarProducer {
 	private int terminated; 
 	
 	private boolean operative = true; 
-	
 	
 	@OneToMany(mappedBy="gitarProducer")
 	private List<ProductionLocation> productionLocation;

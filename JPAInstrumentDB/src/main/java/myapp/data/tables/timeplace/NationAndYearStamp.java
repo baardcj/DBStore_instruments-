@@ -14,7 +14,7 @@ import javax.persistence.UniqueConstraint;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import myapp.data.enums.product.production.Nation;
+import myapp.data.enums.product.productioninfo.Nation;
 
 
 @NoArgsConstructor(access=AccessLevel.PUBLIC, force=true)
@@ -38,12 +38,10 @@ public class NationAndYearStamp {
 	
 	private int producedInOrBeforeYear; 
 	
-	
 	public NationAndYearStamp(Nation nat, int aft, int bef) {
 		this.builtInNation = nat; 
 		this.producedInOrAfterYear = aft;
 		this.producedInOrBeforeYear = bef;
 	}
 	
-		
 }

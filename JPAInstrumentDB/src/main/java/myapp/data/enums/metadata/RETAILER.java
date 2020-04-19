@@ -1,4 +1,4 @@
-package myapp.metadata.enums;
+package myapp.data.enums.metadata;
 
 public enum RETAILER {
 	PRIVATE, 
