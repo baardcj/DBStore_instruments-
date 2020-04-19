@@ -29,7 +29,7 @@ import myapp.data.tables.timeplace.NationAndYearStamp;
 @Data
 @EqualsAndHashCode(callSuper=false)
 @MappedSuperclass
-public abstract class GuitarModel extends StringedInstrument{
+public abstract class Guitar extends StringedInstrument{
 	
 	@Column(nullable = false)
 	private String name; 
@@ -39,7 +39,7 @@ public abstract class GuitarModel extends StringedInstrument{
 	private int launchedYear; 
 	private int discontinuedYear; 
 	
-	private GuitarModel replacedBy;  
+	private Guitar replacedBy;  
 	
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)

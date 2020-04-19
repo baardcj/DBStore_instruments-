@@ -10,13 +10,13 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import myapp.builders.GBuilder;
 import myapp.data.enums.product.guitar.shapes.ELGuitarBodyShape;
-import myapp.data.tables.GuitarModel;
+import myapp.data.tables.Guitar;
 
 
 @AllArgsConstructor
 @NoArgsConstructor(access=AccessLevel.PUBLIC, force=true) 
 @Entity(name="ELGuitar")
-public class ELGuitarModel extends GuitarModel{
+public class ELGuitar extends Guitar{
 	
 
 	@Enumerated(EnumType.STRING)
@@ -32,7 +32,7 @@ public class ELGuitarModel extends GuitarModel{
 	
 	
 	
-	public ELGuitarModel(GBuilder builder) {
+	public ELGuitar(GBuilder builder) {
 		super();
 		
 		this.elShape = ELGuitarBodyShape.valueOf(builder.getBodyShape().toString());

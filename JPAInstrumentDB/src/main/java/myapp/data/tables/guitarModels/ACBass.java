@@ -8,23 +8,23 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import myapp.builders.GBuilder;
-import myapp.data.enums.product.guitar.shapes.ELGuitarBodyShape;
-import myapp.data.tables.GuitarModel;
+import myapp.data.enums.product.guitar.shapes.ACBassBodyShape;
+import myapp.data.tables.Guitar;
 
 
 @AllArgsConstructor
 @NoArgsConstructor(access=AccessLevel.PUBLIC, force=true) 
-@Entity(name="CLGuitar")
-public class CLGuitarModel extends GuitarModel{
+@Entity(name="ACBass")
+public class ACBass extends Guitar{
 	
 
 	@Enumerated(EnumType.STRING)
-	private ELGuitarBodyShape elShape;	
+	private ACBassBodyShape ACBShape;	
 	
 	
-	public CLGuitarModel(GBuilder builder) {
+	public ACBass(GBuilder builder) {
 		super();
 		this.setAttributes(builder);
-		this.elShape = ELGuitarBodyShape.valueOf(builder.getBodyShape().toString());
+		this.ACBShape = ACBShape.valueOf(builder.getBodyShape().toString());
 	}
 }

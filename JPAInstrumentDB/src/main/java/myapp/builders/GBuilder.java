@@ -6,11 +6,11 @@ import myapp.data.enums.product.guitar.GuitarBrand;
 import myapp.data.enums.product.guitar.shapes.GuitarBodyShape;
 import myapp.data.enums.product.productioninfo.Nation;
 import myapp.data.enums.product.quality.QualityRank;
-import myapp.data.tables.guitarModels.ACBassModel;
-import myapp.data.tables.guitarModels.ACGuitarModel;
-import myapp.data.tables.guitarModels.CLGuitarModel;
-import myapp.data.tables.guitarModels.ELBassModel;
-import myapp.data.tables.guitarModels.ELGuitarModel;
+import myapp.data.tables.guitarModels.ACBass;
+import myapp.data.tables.guitarModels.ACGuitar;
+import myapp.data.tables.guitarModels.CLGuitar;
+import myapp.data.tables.guitarModels.ELBass;
+import myapp.data.tables.guitarModels.ELGuitar;
 import myapp.data.tables.timeplace.NationAndYearStamp;
 import lombok.Data;
 
@@ -106,24 +106,24 @@ public class GBuilder {
 	}
 
 
-	public ELGuitarModel buildELGuitar() {
-		return new ELGuitarModel(this);
+	public ELGuitar buildELGuitar() {
+		return new ELGuitar(this);
 	}
 	
-	public ACGuitarModel buildACGuitar() {
-		return new ACGuitarModel(this); 
+	public ACGuitar buildACGuitar() {
+		return new ACGuitar(this); 
 	}
 	
-	public CLGuitarModel buildCLGuitar() {
-		return new CLGuitarModel(this);
+	public CLGuitar buildCLGuitar() {
+		return new CLGuitar(this);
 	}
 	
-	public ELBassModel buildELBass() {
-		return new ELBassModel(this); 
+	public ELBass buildELBass() {
+		return new ELBass(this); 
 	}
 	
-	public ACBassModel buildACBass() {
-		return new ACBassModel(this);
+	public ACBass buildACBass() {
+		return new ACBass(this);
 	}
 
 }

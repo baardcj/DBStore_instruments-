@@ -16,8 +16,8 @@ import myapp.data.enums.product.productioninfo.Nation;
 import myapp.data.enums.product.quality.QualityRank;
 import myapp.data.repo.GuitarRepository;
 import myapp.data.tables.StringedInstrument;
-import myapp.data.tables.guitarModels.ACGuitarModel;
-import myapp.data.tables.guitarModels.ELGuitarModel;
+import myapp.data.tables.guitarModels.ACGuitar;
+import myapp.data.tables.guitarModels.ELGuitar;
 
 
 @SpringBootApplication
@@ -64,7 +64,7 @@ public class DBInstrumentApp {
 	    	
 	    	*/
 	    	
-	    	ELGuitarModel g2 = GBuilder.el()
+	    	ELGuitar g2 = GBuilder.el()
 					.name("Gibson SG 76")
 					.price(11500)
 					.color(Color.BROWN)
@@ -73,7 +73,7 @@ public class DBInstrumentApp {
 					.brand(GuitarBrand.GIBSON)
 					.buildELGuitar(); 
 	    	
-	    	ELGuitarModel g3 = GBuilder.el()
+	    	ELGuitar g3 = GBuilder.el()
 					.name("Fender HighWay")
 					.price(5000)
 					.color(Color.BLACK)
@@ -82,7 +82,7 @@ public class DBInstrumentApp {
 					.brand(GuitarBrand.FENDER)
 					.buildELGuitar(); 
 	
-	    	ACGuitarModel g4 = GBuilder.el()
+	    	ACGuitar g4 = GBuilder.el()
 					.name("Martin D16")
 					.price(8000)
 					.color(Color.NATURAL)

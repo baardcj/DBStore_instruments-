@@ -9,20 +9,20 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import myapp.builders.GBuilder;
 import myapp.data.enums.product.guitar.shapes.ELGuitarBodyShape;
-import myapp.data.tables.GuitarModel;
+import myapp.data.tables.Guitar;
 
 
 @AllArgsConstructor
 @NoArgsConstructor(access=AccessLevel.PUBLIC, force=true) 
-@Entity(name="ELBass")
-public class ELBassModel extends GuitarModel{
+@Entity(name="CLGuitar")
+public class CLGuitar extends Guitar{
 	
 
 	@Enumerated(EnumType.STRING)
 	private ELGuitarBodyShape elShape;	
 	
-	// need to be fixed
-	public ELBassModel(GBuilder builder) {
+	
+	public CLGuitar(GBuilder builder) {
 		super();
 		this.setAttributes(builder);
 		this.elShape = ELGuitarBodyShape.valueOf(builder.getBodyShape().toString());
