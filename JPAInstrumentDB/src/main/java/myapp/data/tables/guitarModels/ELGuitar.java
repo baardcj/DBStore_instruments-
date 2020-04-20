@@ -1,5 +1,6 @@
 package myapp.data.tables.guitarModels;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -12,6 +13,7 @@ import lombok.NoArgsConstructor;
 import myapp.GuitarBuilder;
 import myapp.data.enums.product.guitar.shapes.ELGuitarBodyShape;
 import myapp.data.tables.Guitar;
+import myapp.data.tables.GuitarModel;
 
 
 @AllArgsConstructor
@@ -19,20 +21,24 @@ import myapp.data.tables.Guitar;
 @Entity(name="ELGuitar")
 public class ELGuitar extends Guitar{
 	
-
-	@Enumerated(EnumType.STRING)
-	private ELGuitarBodyShape elShape;	
+	
+	@ManyToOne(cascade = {CascadeType.PERSIST})
+	@JoinColumn(name = "GitarModel_id")
+	private ElGuitarModel gitModel; 
+	
 	
 	@ManyToOne
 	@JoinColumn(name = "ElGuitarDetails_id")
 	private ElGuitarDetails specs; 
 	
+
+	@Enumerated(EnumType.STRING)
+	private ELGuitarBodyShape elShape;	
 	
 	
 	
 	public ELGuitar(GuitarBuilder builder) {
 		super();
-		
 		this.elShape = ELGuitarBodyShape.valueOf(builder.getBodyShape().toString());
 	}
 }
