@@ -1,6 +1,5 @@
 package myapp.data.tables;
 
-import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,8 +15,6 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import myapp.data.enums.product.QualityRank;
-
-
 
 
 @NoArgsConstructor(access=AccessLevel.PUBLIC, force=true)
@@ -36,7 +33,9 @@ public abstract class StringedInstrument {
 	//@Column(nullable = false)
 	private String gName;
 	
+	
 	private int gPrice; 
+	
 	
 	@Enumerated(EnumType.STRING)
 	private QualityRank gQualityClass;
