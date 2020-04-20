@@ -4,8 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
-import javax.persistence.Transient;
-import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
 
 import myapp.data.enums.product.guitar.GuitarBrand;
 import myapp.data.enums.product.guitar.GuitarSeries;
@@ -18,8 +17,8 @@ import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor(access=AccessLevel.PUBLIC, force=true) 
-@Entity
-public class GuitarModel {
+@MappedSuperclass
+public abstract class GuitarModel {
 	
 	@Id
 	private String id; 
@@ -31,8 +30,7 @@ public class GuitarModel {
 	@Enumerated(EnumType.STRING)
 	private GuitarSeries guitarSeries; 
 	
-	@Column(nullable = false)
-	@Transient	
+	@Enumerated(EnumType.STRING)
 	private GuitarBodyShape bodyShape; 
 
 }
