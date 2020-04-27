@@ -12,11 +12,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor(access=AccessLevel.PUBLIC, force=true) 
 @Entity
-
+/*
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = {
 		"brand", 
 		"guitarSeries", 
-		"bodyShape"}))
+		"bodyShape"}))*/
 public class ElGuitarModel {
 	
 	@Id
