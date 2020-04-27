@@ -1,6 +1,7 @@
 package myapp.data.tables.guitarModels;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -15,7 +16,8 @@ import myapp.data.tables.GuitarDetails;
 @Entity
 public class ElGuitarDetails extends GuitarDetails {
 
-
+	@Id
+	private Long id; 
 	/*
 	 * SOME OF THESE FIELDS SHOULD BE PUT IN GUITAR MODEL
 	 * 
